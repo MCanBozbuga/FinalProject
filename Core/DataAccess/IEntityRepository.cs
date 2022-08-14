@@ -1,15 +1,17 @@
-﻿using Entities.Abstract;
+﻿
+using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
     // generic constraint -- generic=kısıtlama
     // class : referans tip
     // IEntity : IEntity olabilir veya IEntity implement eden bir nesne olabilir.
-    public interface IEntityRepository<T> where T : class,IEntity
+    //new() = new'lenebilir olmalı.
+    public interface IEntityRepository<T> where T : class,IEntity,new()
     {
         List<T> GetAll(Expression<Func<T, bool>> filter = null);
         T Get(Expression<Func<T, bool>> filter);
