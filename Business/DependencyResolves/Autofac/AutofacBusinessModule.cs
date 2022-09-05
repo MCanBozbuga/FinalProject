@@ -16,7 +16,13 @@ namespace Business.DependencyResolves.Autofac
         {
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
-           /* builder.RegisterType<FileLogger>().As<ILogger>().SingleInstance();*/ //Biri senden ILogger isterse arka planda ona FileLogger ver.
+
+            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
+            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
+
+
+
+            /* builder.RegisterType<FileLogger>().As<ILogger>().SingleInstance();*/ //Biri senden ILogger isterse arka planda ona FileLogger ver.
         }
     }
 }
