@@ -100,7 +100,7 @@ namespace Business.Concrete
         {
             // Select count(*) from Products where categoryıd=1  => GetAll
             var result = _productDal.GetAll(p => p.CategoryId == categoryId).Count;
-            if (result >= 10)
+            if (result >= 100)
             {
                 return new ErrorResult(Messages.ProductCountOfCategoryError);
             }
